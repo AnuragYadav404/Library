@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./scripts.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Library</title>
+</head>
+<body>
+    <div class="MyLibrary">
+        <div class="inputForm">
+            <form action="#" method="post" id="bookForm">
+                <div class="inputSpace">
+                    <label for="bookTitle">Book Title</label>
+                    <input type="text" id="bookTitle" name="bookTitle">
+                </div>
+                <div class="inputSpace">
+                    <label for="bookAuthor">Author</label>
+                    <input type="text" id="bookAuthor" name="bookAuthor" >
+                </div>
+                <div class="inputSpace">
+                    <label for="bookPages">Pages</label>
+                    <input type="number" name="bookPages" id="bookPages" >
+                </div>
+                <div class="inputSpace">
+                    <button type="reset" id="addBook">Add book</button>
+                </div>
+            </form>
+        </div>
+        <div id="display">
+            <div id="container">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
