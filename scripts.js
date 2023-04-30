@@ -1,11 +1,11 @@
 const container = document.getElementById("container");
 const addBook = document.getElementById("addBook");
 const titleField = document.getElementById("bookTitle");
-
+const bookForm = document.getElementById("bookForm");
 
 const myLibrary = [];
 
-bookForm.addEventListener('reset',function addBookClick(e) {
+bookForm.addEventListener('submit',function addBookClick(e) {
     // will just use button type as reset, instead of submit
     // console.log(e.target); 
     const data = new FormData(e.target);
@@ -15,7 +15,8 @@ bookForm.addEventListener('reset',function addBookClick(e) {
     // console.log(obj.bookAuthor, obj.bookTitle, obj.bookPages);
     
     addBookToLibrary(Object.fromEntries(data));
-    // e.preventDefault();
+    e.preventDefault();
+    e.target.reset();
     
     // e.preventDefault();
 })
@@ -29,9 +30,9 @@ function book(title, author, pages, read) {
     this.read = read;
     this.info = function() {
         if (this.read) {
-            return `The ${this.title} by ${this.author}, ${this.pages} pages, done reading.`;
+            return `${this.title} by ${this.author}, ${this.pages} pages, done reading.`;
         }else {
-            return `The ${this.title} by ${this.author}, ${this.pages} pages, not read yet.`;
+            return `${this.title} by ${this.author}, ${this.pages} pages, not read yet.`;
         }
     }
     this.setRead = function(arg) {
@@ -45,15 +46,10 @@ function addBookToLibrary(obj) {
     // do stuff here
     // here we need to present a form to the user to  
     // console.log(obj)
-    if(obj.bookTitle && obj.bookAuthor && obj.bookPages) {
-        let newBook = new book(obj.bookTitle, obj.bookAuthor, obj.bookPages, false);
+    let newBook = new book(obj.bookTitle, obj.bookAuthor, obj.bookPages, false);
     // console.log(newBook);
-        myLibrary.push(newBook);
-        displayNewBook(newBook);
-    }else {
-        alert("Book title, Book Author and Book pages are mandatory to fill");
-    }
-    
+    myLibrary.push(newBook);
+    displayNewBook(newBook);
 }
 
 

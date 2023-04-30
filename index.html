@@ -11,21 +11,21 @@
 <body>
     <div class="MyLibrary">
         <div class="inputForm">
-            <form action="#" method="post" id="bookForm">
+            <form id="bookForm">
                 <div class="inputSpace">
                     <label for="bookTitle">Book Title</label>
-                    <input type="text" id="bookTitle" name="bookTitle">
+                    <input type="text" id="bookTitle" name="bookTitle" required >
                 </div>
                 <div class="inputSpace">
                     <label for="bookAuthor">Author</label>
-                    <input type="text" id="bookAuthor" name="bookAuthor" >
+                    <input type="text" id="bookAuthor" name="bookAuthor" required >
                 </div>
                 <div class="inputSpace">
                     <label for="bookPages">Pages</label>
-                    <input type="number" name="bookPages" id="bookPages" >
+                    <input type="number" name="bookPages" id="bookPages" required >
                 </div>
                 <div class="inputSpace">
-                    <button type="reset" id="addBook">Add book</button>
+                    <button type="submit" id="addBook">Add book</button>
                 </div>
             </form>
         </div>
